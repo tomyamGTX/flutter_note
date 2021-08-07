@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Note',
       theme: ThemeData(
 textTheme: TextTheme(headline4: TextStyle(color: Colors.indigo) ),
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       home: MyHomePage(title: 'Flutter Note App'),
     );

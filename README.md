@@ -1,6 +1,6 @@
 # flutter_note
 
-A new Flutter application.
+A new Flutter list application.
 
 ## Getting Started
 

@@ -5,14 +5,16 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber,
-        appBar: AppBar(title: Text('Awesome List App'),),
-        body: ListView(
-          children: [
-            CustomText(text: '1'),
-            Text('2'),
-            Text('3')
-          ],
+        appBar: AppBar(title: Text('Awesome List App'),
         ),
+      body: Column(
+        children: List.generate(
+          taskList.length,
+              (index) {
+            return CustomText(text: taskList[index]);
+          },
+        ),
+      ),
     );
   }
 }
@@ -34,4 +36,8 @@ class CustomText extends StatelessWidget {
 }
 
 
-List<String> TaskList=['Task1','Task2', 'Task3'];
+List<String> taskList = [
+  'Task 1',
+  'Task 2',
+  'Task 3',
+];

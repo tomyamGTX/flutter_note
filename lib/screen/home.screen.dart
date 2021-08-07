@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        tooltip: 'Add',
         onPressed: (){
 
         },

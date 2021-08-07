@@ -7,7 +7,9 @@ class Task {
 }
 
 List<Task> taskList = [
-  Task(title: 'Task 1', description: 'Create App', status: 'Incomplete'),
+  Task(title: 'Task 1', description: 'Create App', status: 'Complete'),
   Task(title: 'Task 2', description: 'Do exercise',status: 'Incomplete'),
   Task(title: 'Task 3', description: 'Watch video',status: 'Incomplete'),
+  Task(title: 'Task 4', description: 'Fix coding',status: 'Incomplete'),
+  Task(title: 'Task 5', description: 'Deploy',status: 'Incomplete'),
 ];

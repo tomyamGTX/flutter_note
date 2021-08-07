@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_note/model/task.model.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +19,11 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add,size: 50,),),
+        onPressed: (){
+
+        },
+        child: Icon(Icons.add,size: 50),
+      ),
     );
   }
 }
@@ -34,8 +39,8 @@ class TaskContainer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.indigo.shade100,
-          border: Border.all(color: Colors.indigo.shade300),
+          color: Colors.grey.shade200,
+          border: Border.all(color: Colors.grey.shade300),
         ),
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -55,9 +60,22 @@ class TaskContainer extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text(
-              'Status : ${task.status}',
-              style: TextStyle(fontSize: 20),
+            Row(
+              children: [
+                Text(
+                  'Status : ',
+                  style: TextStyle(fontSize: 20),
+                ),
+                if(task.status=='Incomplete')
+                Text(
+                  task.status,
+                  style: TextStyle(fontSize: 20,color: Colors.red)),
+                if(task.status=='Complete')
+                Text(
+                  task.status,
+                  style: TextStyle(fontSize: 20,color: Colors.green),
+                ),
+              ],
             ),
           ],
         ),

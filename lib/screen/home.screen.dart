@@ -64,7 +64,7 @@ class TaskContainer extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Status : ',
+                  'Status = ',
                   style: TextStyle(fontSize: 20),
                 ),
                 if(task.status=='Incomplete')

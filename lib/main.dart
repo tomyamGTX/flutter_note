@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_note/screen/list.screen.dart';
-import 'package:flutter_note/screen/new,screen.dart';
+import 'package:flutter_note/screen/home.screen.dart';
+import 'package:flutter_note/screen/task.screen.dart';
+import 'package:flutter_note/screen/student,screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,8 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Note',
       routes: {
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/new': (context) => const NewScreen(),
-        '/file': (context) => const HomeScreen(),
+        '/new': (context) => const StudentScreen(),
+        '/file': (context) => const TaskScreen(),
+        '/home': (context) => const HomeScreen(),
       },
       theme: ThemeData(
         textTheme: TextTheme(headline4: TextStyle(color: Colors.indigo) ),

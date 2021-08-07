@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note/model/task.model.dart';
 
-class NewScreen extends StatefulWidget {
+class TaskScreen extends StatefulWidget {
 
-  const NewScreen({Key key}) : super(key: key);
+  const TaskScreen({Key key}) : super(key: key);
 
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -14,11 +14,11 @@ class NewScreen extends StatefulWidget {
       style: optionStyle,
     ),
     Text(
-      'Index 1: List',
+      'Index 1: Task',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Student',
       style: optionStyle,
     ),
     Text(
@@ -28,29 +28,30 @@ class NewScreen extends StatefulWidget {
   ];
 
   @override
-  _NewScreenState createState() => _NewScreenState();
+  _TaskScreenState createState() => _TaskScreenState();
 }
 
-class _NewScreenState extends State<NewScreen> {
-  int _selectedIndex = 2;
+class _TaskScreenState extends State<TaskScreen> {
+  int _selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
-    if(index==1){
-      Navigator.pushNamed(context, '/file');
-      setState(() {
-        _selectedIndex = 1;
-      });}
+    if(index==0)
+      Navigator.pushNamed(context, '/home');
+    if(index==2)
+      Navigator.pushNamed(context, '/new');
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return new WillPopScope(
+        onWillPop: () async => false,
+    child: MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.purple,
+          backgroundColor: Colors.green,
           title: Text('Awesome List App'),
           centerTitle: true,
         ),
@@ -71,12 +72,12 @@ class _NewScreenState extends State<NewScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.file_copy),
-              label: 'List',
+              label: 'Task',
               backgroundColor: Colors.green,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.school),
-              label: 'School',
+              label: 'Student',
               backgroundColor: Colors.purple,
             ),
             BottomNavigationBarItem(
@@ -90,7 +91,7 @@ class _NewScreenState extends State<NewScreen> {
           onTap: _onItemTapped,
         ),
       ),
-    );
+    ));
   }
 }
 
@@ -133,14 +134,14 @@ class TaskContainer extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
                 if(task.status=='Incomplete')
-                  Text(
-                      task.status,
-                      style: TextStyle(fontSize: 20,color: Colors.red)),
+                Text(
+                  task.status,
+                  style: TextStyle(fontSize: 20,color: Colors.red)),
                 if(task.status=='Complete')
-                  Text(
-                    task.status,
-                    style: TextStyle(fontSize: 20,color: Colors.green),
-                  ),
+                Text(
+                  task.status,
+                  style: TextStyle(fontSize: 20,color: Colors.green),
+                ),
               ],
             ),
           ],

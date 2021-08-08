@@ -108,8 +108,8 @@ class StudentContainer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          border: Border.all(color: Colors.grey.shade300),
+          color: Colors.purple.shade50,
+          border: Border.all(color: Colors.purple.shade300),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

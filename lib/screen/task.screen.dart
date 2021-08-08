@@ -106,8 +106,8 @@ class TaskContainer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          border: Border.all(color: Colors.grey.shade300),
+          color: Colors.green.shade50,
+          border: Border.all(color: Colors.green.shade300),
         ),
         padding: const EdgeInsets.all(8.0),
         child: Column(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note/model/student.model.dart';
-import 'package:flutter_note/model/task.model.dart';
 
 class StudentScreen extends StatefulWidget {
 
@@ -8,25 +7,6 @@ class StudentScreen extends StatefulWidget {
 
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Task',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Student',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Settings',
-      style: optionStyle,
-    ),
-  ];
 
   @override
   _StudentScreenState createState() => _StudentScreenState();

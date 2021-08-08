@@ -8,25 +8,6 @@ class TaskScreen extends StatefulWidget {
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Task',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Student',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Settings',
-      style: optionStyle,
-    ),
-  ];
-
   @override
   _TaskScreenState createState() => _TaskScreenState();
 }

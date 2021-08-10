@@ -3,7 +3,7 @@ import 'package:flutter_note/model/student.model.dart';
 
 class StudentScreen extends StatefulWidget {
 
-  const StudentScreen({Key key}) : super(key: key);
+  const StudentScreen();
 
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -80,10 +80,11 @@ class _StudentScreenState extends State<StudentScreen> {
 class StudentContainer extends StatelessWidget {
   final Student student;
 
-  StudentContainer({this.student});
+  StudentContainer({required this.student});
 
   @override
   Widget build(BuildContext context) {
+    String? age= student.age;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -100,9 +101,14 @@ class StudentContainer extends StatelessWidget {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
               ),
               SizedBox(height: 10),
-              Text(student.age,
+              if(age!=null)
+              Text(age,
                 style: TextStyle(fontSize: 20),
               ),
+              if(age==null)
+                Text('Age is unknown',
+                  style: TextStyle(fontSize: 20),
+                ),
               SizedBox(height: 10),
               Text(student.address,
                 style: TextStyle(fontSize: 20),

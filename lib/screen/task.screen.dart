@@ -3,7 +3,7 @@ import 'package:flutter_note/model/task.model.dart';
 
 class TaskScreen extends StatefulWidget {
 
-  const TaskScreen({Key key}) : super(key: key);
+  const TaskScreen();
 
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -79,10 +79,11 @@ class _TaskScreenState extends State<TaskScreen> {
 class TaskContainer extends StatelessWidget {
   final Task task;
 
-  TaskContainer({this.task});
+  TaskContainer({required this.task});
 
   @override
   Widget build(BuildContext context) {
+    String? status = task.status;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -114,14 +115,14 @@ class TaskContainer extends StatelessWidget {
                   'Status = ',
                   style: TextStyle(fontSize: 20),
                 ),
-                if(task.status=='Incomplete')
+                if(status!=null)
                 Text(
-                  task.status,
-                  style: TextStyle(fontSize: 20,color: Colors.red)),
-                if(task.status=='Complete')
+                  status,
+                  style: TextStyle(fontSize: 20,color: Colors.green)),
+                if(status==null)
                 Text(
-                  task.status,
-                  style: TextStyle(fontSize: 20,color: Colors.green),
+                  'Unknown',
+                  style: TextStyle(fontSize: 20,color: Colors.red),
                 ),
               ],
             ),

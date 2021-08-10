@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({this.title});
+  MyHomePage({required this.title});
 
   final String title;
 

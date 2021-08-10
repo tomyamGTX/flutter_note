@@ -118,7 +118,7 @@ class StudentContainer extends StatelessWidget {
               ),
               Spacer(),
               Center(child: ElevatedButton(
-                  onPressed: (){}, child: Text('Delete'),
+                  onPressed: (){}, child: Text('Delete',style: TextStyle(letterSpacing: 3),),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red
                 ),

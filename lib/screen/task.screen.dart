@@ -100,7 +100,7 @@ class TaskContainer extends StatelessWidget {
                 children: [
                   Text(
                     task.title,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, letterSpacing: 2),
                   ),
                   SizedBox(
                     height: 10,

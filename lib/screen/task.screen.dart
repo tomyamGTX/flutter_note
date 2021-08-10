@@ -92,40 +92,39 @@ class TaskContainer extends StatelessWidget {
           border: Border.all(color: Colors.green.shade300),
         ),
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children: [
-            Text(
-              task.title,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    task.title,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    task.description,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  if(status!=null)
+                  Text(
+                    status,
+                    style: TextStyle(fontSize: 20,color: Colors.green)),
+                  if(status==null)
+                  Text(
+                    'Unknown',
+                    style: TextStyle(fontSize: 20,color: Colors.red),
+                  ),
+                ],
+              ),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              task.description,
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Status = ',
-                  style: TextStyle(fontSize: 20),
-                ),
-                if(status!=null)
-                Text(
-                  status,
-                  style: TextStyle(fontSize: 20,color: Colors.green)),
-                if(status==null)
-                Text(
-                  'Unknown',
-                  style: TextStyle(fontSize: 20,color: Colors.red),
-                ),
-              ],
-            ),
+            Icon(Icons.delete,color: Colors.red,),
           ],
         ),
       ),

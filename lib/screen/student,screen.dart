@@ -36,14 +36,17 @@ class _StudentScreenState extends State<StudentScreen> {
           title: Text('Awesome List App'),
           centerTitle: true,
         ),
-        body: ListView(
-          children:
-            List.generate(
-                studentList.length,
-                    (index) {
-                  return StudentContainer(student:studentList[index]);
-              })
+        body: Container(
+          child: GridView.count(
+            crossAxisCount: 2,
+            children: List.generate(
+              studentList.length,
+                  (index) {
+                return StudentContainer(student: studentList[index]);
+              },
+            ),
 
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
@@ -113,6 +116,13 @@ class StudentContainer extends StatelessWidget {
               Text(student.address,
                 style: TextStyle(fontSize: 20),
               ),
+              Spacer(),
+              Center(child: ElevatedButton(
+                  onPressed: (){}, child: Text('Delete'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red
+                ),
+              ))
             ],
           ),
         ),

@@ -39,9 +39,20 @@ class _TaskScreenState extends State<TaskScreen> {
         body: ListView(
           children: List.generate(
             taskList.length,
-                (index) {
-              return TaskContainer(task: taskList[index]);
+                (i) {
+              return TaskContainer(task: taskList[i], index: i,);
             },
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.green,
+          onPressed: () {
+            taskList.add(Task(title: 'title', description: 'description'));
+          setState(() {
+
+          });
+            },
+          child: Icon(Icons.add,
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -78,8 +89,8 @@ class _TaskScreenState extends State<TaskScreen> {
 
 class TaskContainer extends StatelessWidget {
   final Task task;
-
-  TaskContainer({required this.task});
+final int index;
+  TaskContainer({required this.task,required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +135,19 @@ class TaskContainer extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(Icons.delete,color: Colors.red,),
+            Padding(
+              padding: const EdgeInsets.only(right: 40.0),
+              child: Material(
+                color: Colors.transparent,
+                child: IconButton(
+                    onPressed: (){
+                      print(taskList[index].title);
+                      taskList.removeAt(index);
+                      print(taskList.length);
+                    },
+                    icon: Icon(Icons.delete,color: Colors.red,), ),
+              ),
+            ),
           ],
         ),
       ),

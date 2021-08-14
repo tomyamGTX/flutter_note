@@ -41,13 +41,26 @@ class _StudentScreenState extends State<StudentScreen> {
             crossAxisCount: 2,
             children: List.generate(
               studentList.length,
-                  (index) {
-                return StudentContainer(student: studentList[index]);
+                  (i) {
+                return StudentContainer(student: studentList[i], index: i,);
               },
             ),
 
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.purple,
+        onPressed: () {
+          studentList.add(
+              Student(name: 'Name', address: 'address', age: 'age')
+          );
+          setState(() {
+
+          });
+          },
+        child: Icon(Icons.add,
+        ),
+      ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -82,8 +95,8 @@ class _StudentScreenState extends State<StudentScreen> {
 
 class StudentContainer extends StatelessWidget {
   final Student student;
-
-  StudentContainer({required this.student});
+final int index;
+  StudentContainer({required this.student, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +131,14 @@ class StudentContainer extends StatelessWidget {
               ),
               Spacer(),
               Center(child: ElevatedButton(
-                  onPressed: (){}, child: Text('Delete',style: TextStyle(letterSpacing: 3),),
+                  onPressed: (){
+                    print(studentList[index].name);
+                  studentList.removeAt(index);
+                  print(studentList.length);
+                  },
+                child: Text('Delete',
+                  style: TextStyle(letterSpacing: 3),
+              ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red
                 ),

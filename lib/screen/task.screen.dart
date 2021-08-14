@@ -135,18 +135,15 @@ final int index;
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 40.0),
-              child: Material(
-                color: Colors.transparent,
-                child: IconButton(
-                    onPressed: (){
-                      print(taskList[index].title);
-                      taskList.removeAt(index);
-                      print(taskList.length);
-                    },
-                    icon: Icon(Icons.delete,color: Colors.red,), ),
-              ),
+            Material(
+              color: Colors.transparent,
+              child: IconButton(
+                  onPressed: (){
+                    print(taskList[index].title);
+                    taskList.removeAt(index);
+                    print(taskList.length);
+                  },
+                  icon: Icon(Icons.delete,color: Colors.red,), ),
             ),
           ],
         ),

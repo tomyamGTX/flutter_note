@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if(index==1)
       Navigator.pushNamed(context, '/file');
     if(index==2)
-      Navigator.pushNamed(context, '/new');
+      Navigator.pushNamed(context, '/student');
   }
 
   @override

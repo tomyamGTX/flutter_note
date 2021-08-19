@@ -32,7 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.indigo,
-          title: Text('Awesome List App'),
+          title: Text('Awesome List App',
+          style: TextStyle(letterSpacing: 2,
+          ),
+          ),
           centerTitle: true,
         ),
         body: ListView(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note/providers/task-list.provider.dart';
+import 'package:flutter_note/screen/add-student.screen.dart';
 import 'package:flutter_note/screen/add-task.screen.dart';
 import 'package:flutter_note/screen/home.screen.dart';
 import 'package:flutter_note/screen/task.screen.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final taskList = box.read('taskList');
+    final studentList = box.read('studentList');
     final List<Task> list = taskList != null
         ? List.from((taskList as List<dynamic>).map((e) => Task.fromMap(e)))
         : [];
@@ -32,13 +34,13 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
           routes: {
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/student': (context) => const StudentScreen(),
-        '/file': (context) => const TaskListScreen(),
-        '/home': (context) => const HomeScreen(),
-        '/addTask': (context) => AddTaskScreen(),
+            '/student': (context) => const StudentScreen(),
+            '/file': (context) => const TaskListScreen(),
+            '/home': (context) => const HomeScreen(),
+            '/addTask': (context) => AddTaskScreen(),
+            '/addStudent': (context) => AddStudentScreen(),
         },
             theme: ThemeData(
-              primarySwatch: Colors.blueGrey,
             ),
             home: HomeScreen(),
           );

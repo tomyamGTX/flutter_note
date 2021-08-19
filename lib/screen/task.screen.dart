@@ -30,7 +30,11 @@ class _TaskListScreenState extends State<TaskListScreen> {
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Task List'),
+            title: Text('Task List',
+            style: TextStyle(
+            letterSpacing: 2,
+            ),
+            ),
             centerTitle: true,
             backgroundColor: Colors.green,
           ),

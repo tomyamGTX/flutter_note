@@ -33,13 +33,29 @@ class _StudentScreenState extends State<StudentScreen> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.purple,
-          title: Text('Awesome List App'),
+          title: Text('Student List',
+          style: TextStyle(
+          letterSpacing: 2,
+          ),
+          ),
           centerTitle: true,
         ),
-        body: Container(),
+        body: Container(
+          // child: GridView.count(
+          //   crossAxisCount: 2,
+          //   children: List.generate(
+          //     studentList.length,
+          //         (index) {
+          //       return StudentContainer(student: studentList[index]);
+          //       },
+          //   ),
+          // ),
+        ),
         floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/addStudent');
+        },
         child: Icon(Icons.add,
         ),
       ),
@@ -77,7 +93,7 @@ class _StudentScreenState extends State<StudentScreen> {
 
 class StudentContainer extends StatelessWidget {
   final Student student;
-final int index;
+  final int index;
   StudentContainer({required this.student, required this.index});
 
   @override

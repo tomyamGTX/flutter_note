@@ -65,7 +65,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
                 backgroundColor: Colors.indigo,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.file_copy),
+                icon: Icon(Icons.task),
                 label: 'Task',
                 backgroundColor: Colors.green,
               ),

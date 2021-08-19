@@ -36,28 +36,10 @@ class _StudentScreenState extends State<StudentScreen> {
           title: Text('Awesome List App'),
           centerTitle: true,
         ),
-        body: Container(
-          child: GridView.count(
-            crossAxisCount: 2,
-            children: List.generate(
-              studentList.length,
-                  (i) {
-                return StudentContainer(student: studentList[i], index: i,);
-              },
-            ),
-
-          ),
-        ),
+        body: Container(),
         floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
-        onPressed: () {
-          studentList.add(
-              Student(name: 'Name', address: 'address', age: 'age')
-          );
-          setState(() {
-
-          });
-          },
+        onPressed: () {},
         child: Icon(Icons.add,
         ),
       ),
@@ -69,7 +51,7 @@ class _StudentScreenState extends State<StudentScreen> {
               backgroundColor: Colors.indigo,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.file_copy),
+              icon: Icon(Icons.task),
               label: 'Task',
               backgroundColor: Colors.green,
             ),
@@ -131,11 +113,7 @@ final int index;
               ),
               Spacer(),
               Center(child: ElevatedButton(
-                  onPressed: (){
-                    print(studentList[index].name);
-                  studentList.removeAt(index);
-                  print(studentList.length);
-                  },
+                  onPressed: (){},
                 child: Text('Delete',
                   style: TextStyle(letterSpacing: 3),
               ),
